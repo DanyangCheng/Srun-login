@@ -8,7 +8,7 @@ from args import parse_args
 from md5 import md5
 
 jQuery = jquery_mock_callback()  # 模拟jQuery call back.
-ip = "10.15.12.199"
+ip = "your_ip"  # 修改为你的局域网ip
 
 
 
