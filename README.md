@@ -27,7 +27,7 @@ pip install -r requirements.txt
 ### 命令行模式
 
 ```bash
-python login.py --username=学号 --passwd=密码 --login_host=网关IP
+python login.py --username=学号 --passwd=密码 --login_host=网关IP --ip=局域网IP地址
 ```
 
 ### 交互模式

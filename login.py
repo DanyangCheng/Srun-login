@@ -8,7 +8,6 @@ from args import parse_args
 from md5 import md5
 
 jQuery = jquery_mock_callback()  # 模拟jQuery call back.
-ip = "your_ip"  # 修改为你的局域网ip
 
 
 
@@ -25,12 +24,17 @@ def main(args):
     "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6,cy;q=0.5",
     "Cookie": "lang=zh-CN",
     }
-    if Username =="":
+    ip = args.ip
+    if Username =="" or not Username:
         Username = input("Please enter your username:")
-    if Passwd == "":
+    if Passwd == ""or not Passwd:
         Passwd = input("Please input your password:")
-    if Host == "":
+    if Host == "" or not Host:
         Host = input("Please enter login host:")
+    if ip == "" or not ip:
+        ip = input("Please enter your ip:")
+    
+        
 
     get_challenge_url = f"http://{Host}/cgi-bin/get_challenge?callback={jQuery}&username={Username}&ip={ip}&_={str(get_current_timestamp())}"
     response = requests.get(get_challenge_url, headers=Head)  # 返回json
